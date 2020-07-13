@@ -1,22 +1,45 @@
 <dl>
-  <dt><%= Plan.human_attribute_name(:name) %><dt>
-  <dd><%= @plan.name %><dd>
-  <dt><%= Plan.human_attribute_name(:price) %><dt>
-  <dd><%= number_to_currency @plan.current_price %><dd>
-  <dt><%= Plan.human_attribute_name(:platforms) %><dt>
-  <dd><%= @plan.platforms %><dd>
-  <dt><%= Plan.human_attribute_name(:limit_daily_chat) %><dt>
-  <dd><%= @plan.limit_daily_chat %><dd>
-  <dt><%= Plan.human_attribute_name(:limit_monthly_chat) %><dt>
-  <dd><%= @plan.limit_monthly_chat %><dd>
-  <dt><%= Plan.human_attribute_name(:limit_daily_messages) %><dt>
-  <dd><%= @plan.limit_daily_messages %><dd>
-  <dt><%= Plan.human_attribute_name(:limit_monthly_messages) %><dt>
-  <dd><%= @plan.limit_monthly_messages %><dd>
-  <dt><%= Plan.human_attribute_name(:extra_message_price) %><dt>
-  <dd><%= number_to_currency @plan.extra_message_price %><dd>
-  <dt><%= Plan.human_attribute_name(:extra_chat_price) %><dt>
-  <dd><%= number_to_currency @plan.extra_chat_price %><dd>
+  <dt><%= Plan.human_attribute_name(:name) %></dt>
+  <dd><%= @plan.name %></dd>
+
+  <dt><%= Plan.human_attribute_name(:price) %></dt>
+  <dd><%= number_to_currency @plan.current_price %></dd>
+
+  <dt><%= Plan.human_attribute_name(:status) %></dt>
+  <dd><%= Plan.human_attribute_name("status.#{@plan.status}") %></dd>
+
+  <dt><%= Plan.human_attribute_name(:platforms) %></dt>
+  <dd><%= @plan.platforms %></dd>
+
+  <dt><%= Plan.human_attribute_name(:limit_daily_chat) %></dt>
+  <dd><%= @plan.limit_daily_chat %></dd>
+
+  <dt><%= Plan.human_attribute_name(:limit_monthly_chat) %></dt>
+  <dd><%= @plan.limit_monthly_chat %></dd>
+
+  <dt><%= Plan.human_attribute_name(:limit_daily_messages) %></dt>
+  <dd><%= @plan.limit_daily_messages %></dd>
+
+  <dt><%= Plan.human_attribute_name(:limit_monthly_messages) %></dt>
+  <dd><%= @plan.limit_monthly_messages %></dd>
+
+  <dt><%= Plan.human_attribute_name(:extra_message_price) %></dt>
+  <dd><%= number_to_currency @plan.extra_message_price %></dd>
+
+  <dt><%= Plan.human_attribute_name(:extra_chat_price) %></dt>
+  <dd><%= number_to_currency @plan.extra_chat_price %></dd>
 </dl>
 
-<%= link_to t('views.navigation.edit'), edit_plan_path(@plan) %>
+<nav>
+  <% if @plan.active? %>
+    <%= link_to t('.deactivate'), deactivate_plan_path(@plan), 
+                method: :post, class: 'btn btn-outline-danger' %>
+  <% else %>
+    <%= link_to t('.activate'), activate_plan_path(@plan), 
+                method: :post, class: 'btn btn-outline-success' %>
+  <% end %>
+
+  <%= link_to t('views.navigation.edit'), edit_plan_path(@plan), 
+              class: 'btn btn-outline-primary'%>
+</nav>
+

@@ -1,0 +1,25 @@
+footer {
+  margin-top: 10px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray;
+
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    color: $pallette-independence;
+
+    &:hover {
+      color: $pallette-light-independence;
+    }
+  }
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}

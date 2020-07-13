@@ -5,3 +5,6 @@ pt-BR:
     purchase_cancellation:
       approved: Solicitação de cancelamento aprovada! 
       rejected: Solicitação de cancelamento rejeitada!
+    plan:
+      activated: Plano ativado com sucesso! 
+      deactivated: Plano desativado com sucesso!

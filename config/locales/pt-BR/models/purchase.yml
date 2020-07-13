@@ -19,3 +19,16 @@ pt-BR:
         plan: Plano
         company: Empresa
         price: Preço
+        status: Status
+        company: Empresa
+
+      purchase/status:
+        active: Ativo
+        inactive: Inativo
+
+    errors:
+      models:
+        purchase:
+          attributes:
+            company:
+              blocked: bloqueada de fazer novas compras.

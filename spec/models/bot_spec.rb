@@ -17,6 +17,13 @@ RSpec.describe Bot, type: :model do
     expect(subject).to validate_uniqueness_of(:token)
   end
 
+  it 'Create after purchase' do
+    purchase = create(:purchase)
+
+    expect(Bot.count).to eq 1
+    expect(Bot.last.purchase).to eq purchase
+  end
+
   context 'token' do
     it 'should generate a token on create' do
       expect(subject.token).to match RegexSupport::VALID_TOKEN_REGEX
@@ -24,7 +31,8 @@ RSpec.describe Bot, type: :model do
 
     it 'generates a unique token' do
       bot = build(:bot)
-      allow(SecureRandom).to receive(:alphanumeric).and_return(subject.token, 'ABC123')
+      allow(SecureRandom).to receive(:alphanumeric).and_return(subject.token, 'ABC123', 'GGG000', 'FFF678', 'CCC100')
+
       bot.save
       expect(bot.token).not_to eq(subject.token)
     end

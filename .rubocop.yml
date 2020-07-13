@@ -1,5 +1,6 @@
 require:
   - rubocop-rails
+
 AllCops:
   TargetRubyVersion: 2.6
   Exclude:
@@ -14,12 +15,13 @@ AllCops:
 
 Style/Documentation:
   Enabled: false
-Style/ClassAndModuleChildren:
-  EnforcedStyle: compact
+
 Style/FrozenStringLiteralComment:
   Enabled: false
+
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context', 'feature', 'scenario', 'let']
+
 Style/ClassAndModuleChildren:
   Enabled: true
   EnforcedStyle: 'compact'

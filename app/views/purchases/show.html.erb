@@ -1,0 +1,49 @@
+<h1>Compra#<%= @purchase.token %></h1>
+
+<dl>
+  <dt><%= Purchase.human_attribute_name(:created_at) %></dt>
+  <dd><%= l @purchase.created_at, format: :short %></dd>
+
+  <dt><%= Purchase.human_attribute_name(:status) %></dt>
+  <dd><%= Purchase.human_attribute_name("status.#{@purchase.status}") %>
+</dl>
+
+<dl>
+  <dt><%= Plan.human_attribute_name(:name) %></dt>
+  <dd><%= @purchase.plan.name %></dd>
+
+  <dt><%= Plan.human_attribute_name(:price) %></dt>
+  <dd><%= number_to_currency(@purchase.price_when_bought) %></dd>
+
+  <dt><%= Plan.human_attribute_name(:platforms) %></dt>
+  <dd><%= @purchase.plan.platforms %></dd>
+
+  <dt><%= Plan.human_attribute_name(:limit_daily_chat) %></dt>
+  <dd><%= @purchase.plan.limit_daily_chat %></dd>
+
+  <dt><%= Plan.human_attribute_name(:limit_monthly_chat) %></dt>
+  <dd><%= @purchase.plan.limit_monthly_chat %></dd>
+
+  <dt><%= Plan.human_attribute_name(:limit_daily_messages) %></dt>
+  <dd><%= @purchase.plan.limit_daily_messages %></dd>
+
+  <dt><%= Plan.human_attribute_name(:limit_monthly_messages) %></dt>
+  <dd><%= @purchase.plan.limit_monthly_messages %></dd>
+
+  <dt><%= Plan.human_attribute_name(:extra_message_price) %></dt>
+  <dd><%= number_to_currency(@purchase.plan.extra_message_price) %></dd>
+
+  <dt><%= Plan.human_attribute_name(:extra_chat_price) %></dt>
+  <dd><%= number_to_currency(@purchase.plan.extra_chat_price) %></dd>
+</dl>
+
+<dl>
+  <dt><%= Company.human_attribute_name(:name)%> </dt>
+  <dd><%= @purchase.company.name %></dd>
+
+  <dt><%= Company.human_attribute_name(:cnpj)%> </dt>
+  <dd><%= @purchase.company.cnpj %></dd>
+
+  <dt><%= Company.human_attribute_name(:token)%> </dt>
+  <dd><%= @purchase.company.token %></dd>
+</dl>

@@ -19,5 +19,6 @@ pt-BR:
 
       bot/status:
         active: Ativo
+        awaiting: Aguardando
         canceled: Cancelado
         blocked: Bloqueado

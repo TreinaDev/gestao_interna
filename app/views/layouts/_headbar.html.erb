@@ -1,0 +1,22 @@
+<header class='main_headbar navbar navbar-light'>
+  <%= link_to image_tag("bot-icon.png", alt: t('views.application_name'), width: "50"),
+              root_path, class: 'logo_svg' %>
+
+  <div class="headbar_right">
+    <div class="headbar_right">
+    <nav class='nav'>
+      <li class='nav_item'>
+        <%= link_to t('views.navigation.home'), root_path, class: 'nav_item' %>
+      </li>
+
+      <% if user_signed_in? %>
+        <%= render partial: 'layouts/resources_dropdown' %>
+
+
+        <li class='nav_item'>
+          <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'nav_item' %>
+        </li>
+      <% end %>
+    </nav>
+  </div>
+</header>

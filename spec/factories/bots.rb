@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :bot do
     company
     purchase
-    status { 0 }
+    status { :active }
     token { 'MMM000' }
   end
 end

@@ -1,0 +1,12 @@
+---
+pt-BR:
+  api:
+    v1:
+      not_found: '%{model} não encontrada(o).'
+
+      bot_usage:
+        invalid_date: Data não é valida.
+
+      purchases:
+        create:
+          bad_request: Parametros invalidos, verifique o corpo da requisição.

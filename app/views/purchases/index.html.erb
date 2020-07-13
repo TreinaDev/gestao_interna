@@ -1,0 +1,25 @@
+<h1>
+  <%= t('activerecord.models.purchase.other') %>
+</h1>
+
+  <section>
+
+      <table class="col-12 table">
+        <thead>
+          <tr>
+            <th scope="col"><%= t('activerecord.attributes.purchase.token') %></th>
+            <th scope="col"><%= t('activerecord.models.company.one') %></th>
+            <th scope="col"><%= t('activerecord.models.plan.one') %></th>
+            <th scope="col"><%= t('activerecord.attributes.purchase.status') %></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @purchases.each do |purchase| %>
+            <%= render 'table_row', purchase: purchase %>
+          <% end %>
+        </tbody>
+      </table>
+
+  </section>

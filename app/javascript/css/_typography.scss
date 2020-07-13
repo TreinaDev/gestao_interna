@@ -1,0 +1,64 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 10px;
+
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  text-align: center;
+  font-weight: normal;
+  color: $pallette-independence;
+}
+
+.header {
+  margin-top: 20px;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+label {
+  color: $pallette-independence;
+  font-weight: bold;
+}
+
+dt {
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 1.1em;
+}
+
+dd {
+  word-break: break-all;
+  color: $pallette-darker-independence;
+  font-size: 1.05em;
+}
+
+dd:last-child {
+  margin-bottom: 0;
+}
+
+.context_navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.indent {
+  text-indent: 30px;
+}

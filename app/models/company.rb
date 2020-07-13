@@ -1,6 +1,6 @@
 class Company < ApplicationRecord
   has_many :bots, dependent: :destroy
-
+  has_many :block_bots, through: :bots
   validates :name, :address, :corporate_name, :cnpj, presence: true
   validates :token, uniqueness: true
   validates :cnpj, uniqueness: true, case_sensitive: false
@@ -9,16 +9,18 @@ class Company < ApplicationRecord
 
   before_create :generate_token
 
+  def verify_and_block!
+    return unless more_than_one_block_bot?
+
+    block!
+  end
+
   def block!
     update(blocked: true)
-    block_bots
+    bots.update(status: :blocked)
   end
 
   private
-
-  def block_bots
-    bots.update(status: :blocked)
-  end
 
   def cnpj_must_be_valid
     return if CNPJ.valid?(cnpj, strict: true)
@@ -31,5 +33,13 @@ class Company < ApplicationRecord
       token = SecureRandom.alphanumeric(6).upcase
       break token unless Company.exists?(token: token)
     end
+  end
+
+  def number_of_block_bots
+    block_bots.where(updated_at: (Time.zone.now - 30.days)..Time.zone.now).count
+  end
+
+  def more_than_one_block_bot?
+    number_of_block_bots > 1
   end
 end

@@ -6,6 +6,8 @@ class BotChat < ApplicationRecord
   validate :whether_it_starts_in_the_past
   validate :whether_it_ends_after_it_starts
 
+  scope :between, ->(start_date, end_date) { where('created_at >= ? AND created_at <= ?', start_date, end_date) }
+
   private
 
   def whether_it_starts_in_the_past

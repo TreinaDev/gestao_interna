@@ -17,7 +17,6 @@ class PlansController < ApplicationController
       flash[:notice] = 'Plano criado com sucesso!'
       redirect_to @plan
     else
-      flash[:notice] = 'Não foi possível criar o plano!'
       render :new
     end
   end
@@ -33,6 +32,20 @@ class PlansController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def deactivate
+    plan = Plan.find(params[:id])
+    plan.inactive!
+
+    redirect_to plans_path, success: t('flash.plan.deactivated')
+  end
+
+  def activate
+    plan = Plan.find(params[:id])
+    plan.active!
+
+    redirect_to plans_path, success: t('flash.plan.activated')
   end
 
   private

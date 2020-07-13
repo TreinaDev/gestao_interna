@@ -1,0 +1,6 @@
+---
+pt-BR:
+  plans:
+    show:
+      activate: Ativar
+      deactivate: Desativar

@@ -11,7 +11,6 @@ feature 'User view company' do
 
     expect(page).to have_content('Empresas Cadastradas')
     expect(current_path).to eq(companies_path)
-    expect(page).to have_link('Início')
     expect(page).to have_content(company1.name)
     expect(page).to have_content(company1.token)
     expect(page).to have_content(company2.name)
@@ -21,7 +20,7 @@ feature 'User view company' do
   scenario 'User view company details' do
     log_user_in!
     company1 = create(:company, name: 'Treinadev', token: '123456')
-    company2 = create(:company, name: 'Campus Code', token: '654321')
+    company2 = create(:company, name: 'Acme Corp', token: '654321')
     bot1 = create(:bot, company: company1)
     bot2 = create(:bot, company: company2, token: '12345678')
 
@@ -51,7 +50,6 @@ feature 'User view company' do
 
       expect(page).to have_content('Empresas Cadastradas')
       expect(current_path).to eq(companies_path)
-      expect(page).to have_link('Início')
       expect(page).to have_content('Bloqueada')
       expect(page).to have_content(company1.name)
       expect(page).to have_content(company1.token)
@@ -62,7 +60,7 @@ feature 'User view company' do
     scenario 'User view company details' do
       log_user_in!
       company1 = create(:company, name: 'Treinadev', token: '123456')
-      company2 = create(:company, name: 'Campus Code', token: '654321')
+      company2 = create(:company, name: 'Acme Corp', token: '654321')
       bot1 = create(:bot, company: company1)
       bot2 = create(:bot, company: company2, token: '12345678')
       company1.block!

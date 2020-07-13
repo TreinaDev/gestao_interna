@@ -9,8 +9,8 @@ class Api::V1::ApiController < ActionController::API
   def not_found(exception)
     render status: :not_found,
            json: {
-             error: I18n.t('api.v1.errors.not_found',
-                           model: exception.model.constantize.model_name.human)
+             error: t('api.v1.not_found',
+                      model: exception.model.constantize.model_name.human)
            }
   end
 

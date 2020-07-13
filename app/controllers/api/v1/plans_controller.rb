@@ -1,6 +1,6 @@
 class Api::V1::PlansController < Api::V1::ApiController
   def index
-    @plans = Plan.all
+    @plans = Plan.active
 
     render json: @plans.to_json(methods: [:current_price])
   end

@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+*:focus {
+  outline: 0;
+}
+
+body {
+  min-height: 90vh;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: $pallette-black-coffee;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: #00000000;
+}
+
+a {
+  text-decoration: none;
+  color: $pallette-rhythm;
+  
+  &:hover {
+    text-decoration: none;
+  }
+}

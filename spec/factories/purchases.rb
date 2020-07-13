@@ -4,5 +4,6 @@ FactoryBot.define do
     plan
     price { 1.5 }
     email { 'MyString' }
+    status { :active }
   end
 end

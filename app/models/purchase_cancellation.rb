@@ -2,7 +2,7 @@ class PurchaseCancellation < ApplicationRecord
   belongs_to :purchase
   belongs_to :user, optional: true
 
-  enum status: { open: 0, approved: 1, rejected: 2 }
+  enum status: { open: 0, approved: 5, rejected: 10 }
 
   validate :check_for_open_requests, on: :create
 

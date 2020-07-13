@@ -1,0 +1,10 @@
+<tr id="purchase-<%= purchase.id %>">
+  <td><%= purchase.token %></td>
+  <td><%= purchase.company.name %></td>
+  <td><%= purchase.plan.name %></td>
+  <td><%= Purchase.human_attribute_name("status.#{purchase.status}") %></td>
+
+  <td>
+    <%= link_to t('views.navigation.details'), purchase_path(purchase) %>
+  </td>
+</tr>
