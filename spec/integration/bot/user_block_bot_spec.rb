@@ -6,7 +6,7 @@ feature 'User block bot' do
     bot = create(:bot)
 
     visit bots_path
-    within("ul#bot-model-#{bot.id}") do
+    within("tr#bot-#{bot.id}") do
       click_on 'Ver detalhes'
     end
     click_on 'Bloquear'
@@ -24,7 +24,7 @@ feature 'User block bot' do
     login_as user1, scope: :user
 
     visit bots_path
-    within("ul#bot-model-#{bot.id}") do
+    within("tr#bot-#{bot.id}") do
       click_on 'Ver detalhes'
     end
     click_on 'Bloquear'
@@ -34,7 +34,7 @@ feature 'User block bot' do
 
     visit bots_path
 
-    within("ul#bot-model-#{bot.id}") do
+    within("tr#bot-#{bot.id}") do
       click_on 'Ver detalhes'
     end
     click_on 'Confirmar bloqueio'
@@ -61,7 +61,7 @@ feature 'User block bot' do
     login_as user1, scope: :user
 
     visit bots_path
-    within("ul#bot-model-#{bot.id}") do
+    within("tr#bot-#{bot.id}") do
       click_on 'Ver detalhes'
     end
     click_on 'Bloquear'
@@ -71,7 +71,7 @@ feature 'User block bot' do
 
     visit bots_path
 
-    within("ul#bot-model-#{bot.id}") do
+    within("tr#bot-#{bot.id}") do
       click_on 'Ver detalhes'
     end
     click_on 'Confirmar bloqueio'

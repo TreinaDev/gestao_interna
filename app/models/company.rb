@@ -9,8 +9,15 @@ class Company < ApplicationRecord
 
   before_create :generate_token
 
-  def block_company
-    update(blocked: true) if more_than_one_block_bot?
+  def verify_and_block!
+    return unless more_than_one_block_bot?
+
+    block!
+  end
+
+  def block!
+    update(blocked: true)
+    bots.update(status: :blocked)
   end
 
   private

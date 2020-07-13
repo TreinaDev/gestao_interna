@@ -5,6 +5,8 @@ class Bot < ApplicationRecord
   enum status: { active: 0, awaiting: 2, canceled: 5, blocked: 10 }
   has_many :chats, class_name: 'BotChat', dependent: :restrict_with_error
 
+  scope :company_bots, ->(company_id) { where('company_id = ?', company_id) }
+
   validates :token, uniqueness: true
   before_create :generate_token
 

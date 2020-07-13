@@ -18,7 +18,7 @@ class BlockBotsController < ApplicationController
   private
 
   def check_company_block
-    @bot.company.block_company
+    @bot.company.verify_and_block!
     flash[:notice] = 'Empresa bloqueada' if @bot.company.blocked?
   end
 end

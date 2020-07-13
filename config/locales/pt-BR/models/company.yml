@@ -20,3 +20,11 @@ pt-BR:
         corporate_name: Razão social
         cnpj: CNPJ
         token: Token
+
+  companies:
+    index:
+      message: Empresas Cadastradas
+    show:
+      details: Detalhes
+      show_bots: Bots da Empresa
+      company_status: Situação da Empresa

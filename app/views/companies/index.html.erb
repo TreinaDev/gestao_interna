@@ -1,0 +1,24 @@
+<h1><%= t('.message')%></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Token</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr id=<%="company-#{company.id}"%>>
+        <td><%= company.name %><td>
+        <% if company.blocked? %>
+          <td> Bloqueada <td>
+        <% else%>
+          <td> Ativa <td>
+        <% end %>
+        <td><%= company.token %><td>
+        <td><%= link_to 'Detalhes', company_path(company)%><td>
+      </tr>
+    <% end %>
+  </tbody>
+<table>

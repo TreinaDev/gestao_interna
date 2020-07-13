@@ -37,4 +37,31 @@ RSpec.describe Bot, type: :model do
       expect(bot.token).not_to eq(subject.token)
     end
   end
+
+  context 'inactivate bot due company blocked cnpj' do
+    it 'block all bots from a company' do
+      company = create(:company)
+      bot1 = create(:bot, company_id: company.id)
+      bot2 = create(:bot, company_id: company.id, token: '12312312')
+      company.block!
+
+      expect(bot1.reload).to be_blocked
+      expect(bot2.reload).to be_blocked
+    end
+
+    it 'block just bots from the company blocked' do
+      company = create(:company)
+      company2 = create(:company)
+      bot1 = create(:bot, company_id: company.id, status: :active)
+      bot2 = create(:bot, company_id: company.id, token: '12312312', status: :active)
+      bot3 = create(:bot, company_id: company2.id, token: '1231231')
+      bot4 = create(:bot, company_id: company2.id, token: '515151')
+      company.block!
+
+      expect(bot1.reload).to be_blocked
+      expect(bot2.reload).to be_blocked
+      expect(bot3.reload).to be_active
+      expect(bot4.reload).to be_active
+    end
+  end
 end

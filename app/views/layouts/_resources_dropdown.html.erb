@@ -1,5 +1,5 @@
 <li class='nav_item dropdown' id="jobs_dropdown">
-  <a class='nav_item dropdown-toggle' role='button' id='resourcesDropdown' 
+  <a class='nav_item dropdown-toggle' role='button' id='resourcesDropdown'
     data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
     <%= t('views.navigation.resources') %>
   </a>
@@ -16,6 +16,9 @@
                 class: 'nav_dropdown_item dropdown-item' %>
     <%= link_to t('activerecord.models.purchase.other'),
                 purchases_path,
+                class: 'nav_dropdown_item dropdown-item' %>
+    <%= link_to 'Ver Empresas',
+                companies_path,
                 class: 'nav_dropdown_item dropdown-item' %>
   </div>
 </li>

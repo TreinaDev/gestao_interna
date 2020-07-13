@@ -1,0 +1,41 @@
+<h1><%= @company.name %></h1>
+<h2> <%= t('.details')%> </h2>
+
+<dl>
+  <dt><%= Company.human_attribute_name(:name) %><dt>
+  <dd><%= @company.name %><dd>
+  <dt><%= t('.company_status')%> </dt>
+  <% if @company.blocked? %>
+    <dd> Bloqueada <dd>
+  <% else%>
+    <dd> Ativa <dd>
+  <% end %>
+  <dt><%= Company.human_attribute_name(:token) %><dt>
+  <dd><%= @company.token %><dd>
+  <dt><%= Company.human_attribute_name(:corporate_name) %><dt>
+  <dd><%= @company.corporate_name %><dd>
+  <dt><%= Company.human_attribute_name(:address) %><dt>
+  <dd><%= @company.address %><dd>
+  <dt><%= Company.human_attribute_name(:cnpj) %><dt>
+  <dd><%= @company.cnpj %><dd>
+</dl>
+
+<h2><%= t('.show_bots') %></h2>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bots.each do |bot| %>
+      <tr id=<%="bot-#{bot.id}"%>>
+        <td><%= bot.token %><td>
+        <td><%= Bot.human_attribute_name("status.#{bot.status}") %><td>
+      </tr>
+    <% end %>
+  </tbody>
+<table>

@@ -16,6 +16,9 @@ pt-BR:
       purchase:
         <<: *attr_defaults
         token: Token
+        plan: Plano
+        company: Empresa
+        price: Preço
         status: Status
         company: Empresa
 
