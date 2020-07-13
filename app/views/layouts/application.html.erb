@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GestaoInterna</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= render 'layouts/head' %>
 
   <body>
-    <% if user_signed_in? %>
-      <nav>
-        <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
-        <%= link_to t('activerecord.models.plan.other'), plans_path %>
-        <%= link_to t('activerecord.models.purchase_cancellation.other'), purchase_cancellations_path %>
-        <%= link_to t('activerecord.models.purchase.other'), purchases_path %>
-      </nav>
-    <% end %>
+    <%= render 'layouts/headbar' %>
 
-    <%= render partial: 'shared/flashes' %>
+    <main class='container'>
 
-    <%= yield %>
+      <%= render partial: 'shared/flashes' %>
+
+      <%= yield %>
+
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
+    </main>
   </body>
 </html>

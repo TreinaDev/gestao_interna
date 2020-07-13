@@ -1,14 +1,30 @@
-<h2>Bots</h2>
-<% if @bots.empty?%>
-  <p>Ainda não foi criado nenhum bot!</p>
-<% end %>
-<div>
-  <% @bots.each do |bot|%>
-  <ul>
-    <li><%= bot.company.name %></li>
-    <li><%= bot.purchase.plan.name %></li>
-    <li><%= Bot.human_attribute_name("status.#{bot.status}") %></li>
-    <li><%= bot.token %></li>
-  </ul>
-<% end %>
-</div>
+<h1>Bots</h1>
+
+<section>
+  <% if @bots.empty? %>
+    <p>Ainda não foi criado nenhum bot!</p>
+  <% end %>
+
+  <table class="col table">
+    <thead>
+      <tr>
+        <th scope="col"><%= t('activerecord.models.company.one') %></th>
+        <th scope="col"><%= t('activerecord.models.plan.one') %></th>
+        <th scope="col"><%= t('activerecord.attributes.bot.status') %></th>
+        <th scope="col"><%= t('activerecord.attributes.bot.token') %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @bots.each do |bot| %>
+        <tr id="bot-<%= bot.id %>">
+          <td><%= bot.company.name %></td>
+          <td><%= bot.purchase.plan.name %></td>
+          <td><%= Bot.human_attribute_name("status.#{bot.status}") %></td>
+          <td><%= bot.token %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</section>

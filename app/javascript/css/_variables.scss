@@ -1,0 +1,71 @@
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+$gray-darkest: #707070;
+$gray-darker: #808080;
+$gray: #a0a0a0;
+$gray-medium-light: #cacaca;
+$gray-light: #d1d1d1;
+$gray-ultra-light: #dbdbdb;
+$simple-background: #f5f6f7;
+
+$pallette-black-coffee: #3f343b;
+
+$pallette-darker-independence: #494458;
+$pallette-independence: #575366ff;
+$pallette-light-independence: #9a97a3ff;
+
+$pallette-rhythm: #777da7ff;
+$pallette-picotee-blue: #23278aff;
+
+$pallette-royal-blue: #5762d5ff;
+$pallette-light-royal-blue: #a9b5fa41;
+$pallette-very-light-royal-blue: #a9b5fa1c;
+
+$pallette-cyan: #bccfc9;
+$pallette-light-cyan: #d1e3ddff;
+$pallette-very-light-cyan: #eaf7f2;
+
+$mint-green-dark: #47c287;
+$mint-green: #b3ffb3;
+
+$state-danger-text: #eb4848;
+
+$state-standout: #f53729;
+
+$favorite-star: #f8cf5f;
+
+$state-ongoing: #fdffef;
+$state-accepted: #e4ffe4;
+$state-rejected: #fcd7d4;
+
+$color-1a: #41c7f0;
+$color-1b: #2994b2;
+$color-1c: #22a7cc;
+$color-1d: #ffa500;
+$color-1f: #9958da;
+$color-1g: #8437d2;
+
+$color-2a: #7ec8e3;
+$color-2b: #0000ff;
+$color-2c: #000c66;
+$color-2d: #050a30;
+
+$color-3a: #e2f3f5;
+$color-3b: #22d1ee;
+$color-3c: #3d5af1;
+$color-3d: #0e153a;
+
+$color-4a: #40514e;
+$color-4b: #2f89fc;
+$color-4c: #30e3ca;
+$color-4d: #f5f5f5;
+
+$color-5a: #020887;
+$color-5b: #334195;
+$color-5c: #647aa3;
+$color-5d: #95b2b0;
+$color-5e: #c6ebbe;

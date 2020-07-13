@@ -1,0 +1,21 @@
+<li class='nav_item dropdown' id="jobs_dropdown">
+  <a class='nav_item dropdown-toggle' role='button' id='resourcesDropdown' 
+    data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+    <%= t('views.navigation.resources') %>
+  </a>
+
+  <div class='dropdown-menu dropdown-menu-right' aria-labelledby='resourcesDropdown'>
+    <%= link_to t('activerecord.models.bot.other'),
+                bots_path,
+                class: 'nav_dropdown_item dropdown-item' %>
+    <%= link_to t('activerecord.models.purchase_cancellation.slug'),
+                purchase_cancellations_path,
+                class: 'nav_dropdown_item dropdown-item' %>
+    <%= link_to t('activerecord.models.plan.other'),
+                plans_path,
+                class: 'nav_dropdown_item dropdown-item' %>
+    <%= link_to t('activerecord.models.purchase.other'),
+                purchases_path,
+                class: 'nav_dropdown_item dropdown-item' %>
+  </div>
+</li>

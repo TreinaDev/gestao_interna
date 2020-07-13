@@ -6,7 +6,7 @@ feature 'User can browse purchase cancellation request' do
 
     visit root_path
 
-    click_on 'Solicitações de cancelamento'
+    click_on 'Cancelamentos'
 
     expect(current_path).to eq(purchase_cancellations_path)
     expect(page).to have_content(cancellation_request.id)
@@ -25,7 +25,7 @@ feature 'User can browse purchase cancellation request' do
     another_cancellation_request = create(:purchase_cancellation)
 
     visit root_path
-    click_on 'Solicitações de cancelamento'
+    click_on 'Cancelamentos'
     within "tr#purchase_cancellation-#{cancellation_request.id}" do
       click_on 'Detalhes'
     end

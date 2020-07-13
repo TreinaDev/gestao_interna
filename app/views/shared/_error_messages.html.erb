@@ -1,0 +1,13 @@
+<% if object.errors.any? %>
+  <div id='error_explanation'>
+    <div class='alert alert-danger'>
+      <%= t('views.messages.form_invalid', error_count: object.errors.count ) %>
+    </div>
+
+    <ul>
+      <% object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

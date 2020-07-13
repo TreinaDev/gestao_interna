@@ -17,7 +17,15 @@ pt-BR:
         <<: *attr_defaults
         token: Token
         status: Status
+        company: Empresa
 
       purchase/status:
         active: Ativo
         inactive: Inativo
+
+    errors:
+      models:
+        purchase:
+          attributes:
+            company:
+              blocked: bloqueada de fazer novas compras.

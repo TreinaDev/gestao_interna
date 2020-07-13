@@ -9,8 +9,4 @@ pt-BR:
 
       purchases:
         create:
-          error: '%{attribute} não encontrado.'
-          errors: 'Token e Plano não encontrados.'
-          token: Token
-          plan: Plano
-          purchase: Compra
+          bad_request: Parametros invalidos, verifique o corpo da requisição.
