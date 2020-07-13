@@ -1,7 +1,7 @@
 class Bot < ApplicationRecord
   belongs_to :company
   belongs_to :purchase
-  has_one :block_bot, dependent: :destroy
+  has_many :block_bots, dependent: :destroy
   enum status: { active: 0, awaiting: 2, canceled: 5, blocked: 10 }
   has_many :chats, class_name: 'BotChat', dependent: :restrict_with_error
 

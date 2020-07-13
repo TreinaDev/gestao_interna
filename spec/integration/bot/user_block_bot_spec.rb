@@ -55,7 +55,9 @@ feature 'User block bot' do
     bot3 = create(:bot, company: company2)
 
     create(:block_bot, bot: bot3, created_at: Time.zone.today - 20, updated_at: Time.zone.today - 18)
+    create(:block_bot, bot: bot3, created_at: Time.zone.today - 20, updated_at: Time.zone.today - 18)
 
+    create(:block_bot, bot: bot2, created_at: Time.zone.today - 20, updated_at: Time.zone.today - 18)
     create(:block_bot, bot: bot2, created_at: Time.zone.today - 20, updated_at: Time.zone.today - 18)
 
     login_as user1, scope: :user

@@ -9,12 +9,6 @@ class Company < ApplicationRecord
 
   before_create :generate_token
 
-  def verify_and_block!
-    return unless more_than_one_block_bot?
-
-    block!
-  end
-
   def block!
     update(blocked: true)
     bots.update(status: :blocked)
@@ -33,13 +27,5 @@ class Company < ApplicationRecord
       token = SecureRandom.alphanumeric(6).upcase
       break token unless Company.exists?(token: token)
     end
-  end
-
-  def number_of_block_bots
-    block_bots.where(updated_at: (Time.zone.now - 30.days)..Time.zone.now).count
-  end
-
-  def more_than_one_block_bot?
-    number_of_block_bots > 1
   end
 end
