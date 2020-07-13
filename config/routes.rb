@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: 'home#index'
+  resources :bots, only: %i[create index show] do
+    resources :block_bots, only: %i[create] do
+      post :confirm, on: :member
+    end
+  end
 
-  resources :bots, only: %i[create index]
   resources :purchases, only: %i[index show]
   resources :plans, only: %i[index show new create edit update] do
     post :deactivate, on: :member
