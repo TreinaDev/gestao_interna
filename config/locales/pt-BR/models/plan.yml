@@ -27,6 +27,7 @@ pt-BR:
         extra_chat_price: Valor por conversa além do limite
         status: Status
         current_price: Valor atual
+        blocked_on_limit: Bloquear ao atingir limite
 
       plan/status:
         active: Ativo

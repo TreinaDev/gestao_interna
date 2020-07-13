@@ -5,9 +5,9 @@ class Plan < ApplicationRecord
   enum status: { active: 0, inactive: 5 }
 
   validates :name, :price, :platforms, :limit_daily_chat, :limit_monthly_chat,
-            :limit_daily_messages, :limit_monthly_messages,
-            :extra_message_price, :extra_chat_price, presence: true
+            :limit_daily_messages, :limit_monthly_messages, presence: true
   validates :name, uniqueness: true
+  validate :whether_limits_or_charges_extra
   after_save_commit :create_plan_price
 
   def current_price
@@ -29,6 +29,14 @@ class Plan < ApplicationRecord
   end
 
   private
+
+  def whether_limits_or_charges_extra
+    return if blocked_on_limit
+    return if extra_message_price.present? && extra_chat_price.present?
+
+    errors.add(:extra_message_price, :blank) if extra_message_price.blank?
+    errors.add(:extra_chat_price, :blank) if extra_chat_price.blank?
+  end
 
   def create_plan_price
     return unless price

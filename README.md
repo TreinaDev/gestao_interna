@@ -243,7 +243,7 @@ Para testar e debugar a API utilizamos a ferramenta [Insomnia](https://insomnia.
 
 #### Descrição
 
-<p align="justify">Este endpoint permite a listagem de todos os planos ativos cadastrados no sistema de gestão e seus detalhes.</p>
+<p align="justify">Este endpoint permite a listagem de todos os planos ativos cadastrados no sistema de gestão e seus detalhes. Existem planos que não permitem mensagems e chats extra, indicados pelo booleano *blocked_on_limit*.</p>
 
 #### Parametros necessarios
 
@@ -264,33 +264,33 @@ Para testar e debugar a API utilizamos a ferramenta [Insomnia](https://insomnia.
 [
   {
     "id": 1,
-    "name": "quasi",
-    "created_at": "2020-07-02T18:55:52.827-03:00",
-    "updated_at": "2020-07-02T18:55:52.827-03:00",
+    "name": "Unde quae ea iste.",
+    "created_at": "2020-07-12T20:13:59.372-03:00",
+    "updated_at": "2020-07-12T20:13:59.372-03:00",
     "platforms": "MyString",
-    "limit_daily_chat": 1,
-    "limit_monthly_chat": 1,
-    "limit_daily_messages": 1,
-    "limit_monthly_messages": 1,
+    "limit_daily_chat": 20,
+    "limit_monthly_chat": 20,
+    "limit_daily_messages": 20,
+    "limit_monthly_messages": 20,
     "extra_message_price": 1.5,
     "extra_chat_price": 1.5,
     "status": "active",
-    "current_price": 595.08
+    "blocked_on_limit": false,
+    "current_price": 700.53
   },
   {
     "id": 2,
-    "name": "vel",
-    "created_at": "2020-07-02T18:55:52.869-03:00",
-    "updated_at": "2020-07-02T18:55:52.869-03:00",
+    "name": "Ea voluptas architecto consequuntur.",
+    "created_at": "2020-07-12T20:13:59.469-03:00",
+    "updated_at": "2020-07-12T20:13:59.469-03:00",
     "platforms": "MyString",
-    "limit_daily_chat": 1,
-    "limit_monthly_chat": 1,
-    "limit_daily_messages": 1,
-    "limit_monthly_messages": 1,
-    "extra_message_price": 1.5,
-    "extra_chat_price": 1.5,
+    "limit_daily_chat": 20,
+    "limit_monthly_chat": 20,
+    "limit_daily_messages": 20,
+    "limit_monthly_messages": 20,
     "status": "active",
-    "current_price": 775.65
+    "blocked_on_limit": true,
+    "current_price": 796.59
   }
 ]
 ```
@@ -303,7 +303,7 @@ Para testar e debugar a API utilizamos a ferramenta [Insomnia](https://insomnia.
 
 #### Descrição
 
-<p align="justify">Este endpoint permite ver os detalhes de um plano em particular pelo seu Identificador.</p>
+<p align="justify">Este endpoint permite ver os detalhes de um plano em particular pelo seu Identificador. Existem planos que não permitem mensagems e chats extra, indicados pelo booleano *blocked_on_limit*.</p>
 
 #### Parametros necessarios
 
@@ -335,6 +335,7 @@ Para testar e debugar a API utilizamos a ferramenta [Insomnia](https://insomnia.
   "extra_message_price": 1.5,
   "extra_chat_price": 1.5,
   "status": "active",
+  "blocked_on_limit": false,
   "current_price": 595.08
 }
 ```

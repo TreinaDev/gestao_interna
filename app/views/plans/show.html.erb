@@ -23,12 +23,19 @@
   <dt><%= Plan.human_attribute_name(:limit_monthly_messages) %></dt>
   <dd><%= @plan.limit_monthly_messages %></dd>
 
-  <dt><%= Plan.human_attribute_name(:extra_message_price) %></dt>
-  <dd><%= number_to_currency @plan.extra_message_price %></dd>
+  <% unless @plan.blocked_on_limit %>
+    <dt><%= Plan.human_attribute_name(:extra_message_price) %></dt>
+    <dd><%= number_to_currency @plan.extra_message_price %></dd>
 
-  <dt><%= Plan.human_attribute_name(:extra_chat_price) %></dt>
-  <dd><%= number_to_currency @plan.extra_chat_price %></dd>
+    <dt><%= Plan.human_attribute_name(:extra_chat_price) %></dt>
+    <dd><%= number_to_currency @plan.extra_chat_price %></dd>
+  <% end %>
 </dl>
+
+<% if @plan.blocked_on_limit %>
+  <p> <%= t('.blocked_on_limit') %> </p>
+<% end %>
+
 
 <nav>
   <% if @plan.active? %>

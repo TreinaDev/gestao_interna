@@ -19,8 +19,6 @@ RSpec.describe Plan, type: :model do
     expect(subject).to validate_presence_of(:limit_monthly_chat)
     expect(subject).to validate_presence_of(:limit_daily_messages)
     expect(subject).to validate_presence_of(:limit_monthly_messages)
-    expect(subject).to validate_presence_of(:extra_message_price)
-    expect(subject).to validate_presence_of(:extra_chat_price)
   end
 
   it 'validates unique attributes' do
@@ -29,6 +27,21 @@ RSpec.describe Plan, type: :model do
 
   it 'status should default to active' do
     expect(subject.status).to eq('active')
+  end
+
+  context 'extra price validations' do
+    it 'should validate extra prices presence if blocked_on_limit' do
+      subject.blocked_on_limit = false
+
+      expect(subject).to validate_presence_of(:extra_chat_price)
+      expect(subject).to validate_presence_of(:extra_message_price)
+    end
+
+    it "shouldn't otherwise" do
+      subject.blocked_on_limit = true
+
+      expect(subject).to be_valid
+    end
   end
 
   it 'should create a plan_price before saving' do

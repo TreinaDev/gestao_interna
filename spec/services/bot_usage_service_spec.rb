@@ -46,7 +46,7 @@ RSpec.describe BotUsageService do
   end
 
   describe 'private: monthly_cost' do
-    it 'should the months cost including extra charges' do
+    it 'should return the expected cost including extra charges' do
       plan = create(:plan, price: 894.13, limit_monthly_chat: 23, limit_monthly_messages: 123,
                            extra_chat_price: 23.4, extra_message_price: 0.6)
       purchase = create(:purchase, plan: plan)
@@ -57,6 +57,19 @@ RSpec.describe BotUsageService do
       subject = described_class.new(params)
 
       expect(subject.send(:monthly_cost)).to eq(894.13 + 17 * 23.4 + 77 * 0.6)
+    end
+
+    it "should return the plan's price with no extra charges" do
+      plan = create(:plan, price: 894.13, limit_monthly_chat: 23, limit_monthly_messages: 123,
+                           blocked_on_limit: true)
+      purchase = create(:purchase, plan: plan)
+      bot = create(:bot, purchase: purchase)
+      create_list(:bot_chat, 23, :end_conversation, bot: bot, message_count: 3)
+
+      params = { bot: bot, raw_date: nil }
+      subject = described_class.new(params)
+
+      expect(subject.send(:monthly_cost)).to eq(894.13)
     end
   end
 

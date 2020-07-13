@@ -53,6 +53,8 @@ class BotUsageService
 
   def monthly_cost
     base_cost = @bot.purchase.price_when_bought
+    return base_cost if @bot.purchase.plan.blocked_on_limit
+
     base_cost += extra_chats_cost if exceeded_chat_limit
     base_cost += extra_messages_cost if exceeded_message_limit
 

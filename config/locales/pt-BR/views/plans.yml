@@ -2,5 +2,6 @@
 pt-BR:
   plans:
     show:
+      blocked_on_limit: O bot é bloqueado ao atingir o limite.
       activate: Ativar
       deactivate: Desativar
