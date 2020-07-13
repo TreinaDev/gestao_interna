@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'User require Bot usage' do
   context 'GET /api/v1/bot_usage' do
     it 'should return the bot usage at the current month' do
-      bot = create(:bot, created_at: 1.day.ago)
+      bot = create(:bot, created_at: 2.days.ago)
       create_list(:bot_chat, 5, :end_conversation, bot: bot, message_count: 3)
 
       get api_v1_bot_usage_path, params: { bot: { token: bot.token } }
@@ -20,7 +20,7 @@ describe 'User require Bot usage' do
       plan = create(:plan, price: 30.00, limit_monthly_chat: 2, limit_monthly_messages: 5,
                            extra_chat_price: 2.5, extra_message_price: 1.5)
       purchase = create(:purchase, plan: plan)
-      bot = create(:bot, purchase: purchase, created_at: 1.day.ago)
+      bot = create(:bot, purchase: purchase, created_at: 2.days.ago)
       create_list(:bot_chat, 4, :end_conversation, bot: bot, message_count: 3)
 
       get api_v1_bot_usage_path, params: { bot: { token: bot.token } }

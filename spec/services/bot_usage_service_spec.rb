@@ -6,7 +6,7 @@ RSpec.describe BotUsageService do
       plan = create(:plan, price: 200.00, limit_monthly_chat: 15, limit_monthly_messages: 400,
                            extra_chat_price: 2.5, extra_message_price: 1.5)
       purchase = create(:purchase, plan: plan)
-      bot = create(:bot, purchase: purchase, created_at: 1.day.ago)
+      bot = create(:bot, purchase: purchase, created_at: 2.days.ago)
       create_list(:bot_chat, 20, :end_conversation, bot: bot, message_count: 100)
 
       params = { bot: bot, raw_date: nil }

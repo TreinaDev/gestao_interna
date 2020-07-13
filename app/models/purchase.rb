@@ -8,6 +8,7 @@ class Purchase < ApplicationRecord
 
   enum status: { active: 0, inactive: 5 }
 
+  validate :whether_company_is_not_bloked
   before_create :generate_token
   after_commit :create_bot, on: :create
 
@@ -16,6 +17,12 @@ class Purchase < ApplicationRecord
   end
 
   private
+
+  def whether_company_is_not_bloked
+    return unless company&.blocked
+
+    errors.add :company, :blocked
+  end
 
   def generate_token
     self.token = loop do

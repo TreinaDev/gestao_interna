@@ -5,5 +5,9 @@ FactoryBot.define do
     address { Faker::Address.full_address }
     corporate_name { Faker::Company.name }
     blocked { false }
+
+    trait :blocked do
+      blocked { true }
+    end
   end
 end
