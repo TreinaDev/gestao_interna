@@ -4,7 +4,7 @@ class BotsController < ApplicationController
   end
 
   def show
-    @bot = Bot.find(params[:id])
+    @bot = Bot.find(params[:id]).decorate
     @block_bot = BlockBot.find_by(params[:bot_id])
   end
 end
