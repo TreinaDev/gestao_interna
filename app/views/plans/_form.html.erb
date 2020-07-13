@@ -1,12 +1,6 @@
-<div>
-  <% if @plan.errors.any? %>
-    <% @plan.errors.full_messages.each do |message|%>
-      <p><%= message %></p>
-    <% end %>
-  <% end %>
-</div>
-
 <%= form_with model: @plan, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
   <%= f.label :name %>
   <%= f.text_field :name %>
 

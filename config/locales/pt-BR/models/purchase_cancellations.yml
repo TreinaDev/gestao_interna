@@ -5,6 +5,7 @@ pt-BR:
       purchase_cancellation:
         one: Solicitação de cancelamento
         other: Solicitações de cancelamento
+        slug: Cancelamentos
 
     attributes:
       attr_defaults: &attr_defaults

@@ -1,7 +1,44 @@
 ---
 pt-BR:
   views:
+    application_name: Sistema de gestão de Bots
+    greeting: "Bem vindo ao sistema de gerenciamento de Bots!"
+
+    messages:
+      arbitrary_error: Algo deu errado! Por favor verifique os dados e tente novamente.
+      delete_resource: "Tem certeza que deseja remover o(a) %{resource}?"
+      form_invalid: "Este formulário contem %{error_count} erro(s):"
 
     navigation:
-      edit: Editar
+      home: Home
+      resources: Recursos
+      log_in: Entrar
+      go_back: Voltar
       details: Detalhes
+      new: Novo
+      edit: Editar
+      reject: Rejeitar
+
+    actions:
+      log_out: Sair
+      log_in: Entrar
+      send: Enviar
+      update: Atualizar
+      delete: Apagar
+      expand: Expandir
+      search: Procurar
+      filter: Filtrar
+      accept: Aceitar
+      reject: Rejeitar
+
+    footer:
+      message_1: Aplicação Rails desenvolvida pela terceira turma do
+      original_repo: Repositório Original
+
+    support:
+      of: de
+      to: para
+      sent: Enviada
+      yes: Sim
+      no: Não
+      undefined: Indefinido

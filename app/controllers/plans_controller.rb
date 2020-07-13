@@ -17,7 +17,6 @@ class PlansController < ApplicationController
       flash[:notice] = 'Plano criado com sucesso!'
       redirect_to @plan
     else
-      flash[:notice] = 'Não foi possível criar o plano!'
       render :new
     end
   end

@@ -43,6 +43,7 @@
   - :small_blue_diamond: [Iniciar conversa de Bot](#iniciar-conversa-de-bot)
   - :small_blue_diamond: [Encerrar conversa de Bot](#encerrar-conversa-de-bot)
   - :small_blue_diamond: [Consumo de dados dos Bots](#consumo-de-dados-dos-bots)
+- :small_blue_diamond: [Desenvolvedores](#desenvolvedores)
 
 ## Descrição do projeto
 
@@ -95,6 +96,10 @@ Testes:
 - Pop-overs: [Popper](https://github.com/popperjs/popper-core)
 
 ## API V1
+
+Para testar e debugar a API utilizamos a ferramenta [Insomnia](https://insomnia.rest/). O Insomnia permite exportar todas as rotas e respostas dentro de um .json, para que outros possam facilmente importar e testar em suas máquinas. Segue o .json mais recente, com todas as rotas documentadas:
+
+[**Workspace de Insomnia 12/07/2020**](.github/readme/insomnia_gestão_interna_api_v1_2020_07_12.json)
 
 ### Cadastro de empresas
 
@@ -486,3 +491,8 @@ Testes:
 <img src=".github/readme/bot_consumo_mes_anterior.png" />
 
 ---
+
+## Desenvolvedores
+
+|  [<img src="https://avatars1.githubusercontent.com/u/52427356?s=400&v=4" width=115><br><sub>Fabio Oya</sub>](https://github.com/FabioOya) | [<img src="https://avatars3.githubusercontent.com/u/26432843?s=400&u=fd50ba7a820456ce0f16b0815cc4e71df17d7b9d&v=4" width=115><br><sub>Gabriel Sugai</sub>](https://github.com/gabrielsugai) | [<img src="https://avatars1.githubusercontent.com/u/41345182?s=400&v=4" width=115><br><sub>Guilherme Sampaio</sub>](https://github.com/Guifs100) | [<img src="https://avatars3.githubusercontent.com/u/55254573?s=400&v=4" width=115><br><sub>Lucas Penhalver</sub>](https://github.com/penhalver02) | [<img src="https://avatars3.githubusercontent.com/u/19496542?s=400&u=c4bd61bd7304ea12b53ae7b313b62311a7ca64a5&v=4" width=115><br><sub>Luis Geniole</sub>](https://github.com/librity) |  [<img src="https://avatars2.githubusercontent.com/u/56324616?s=400&u=880bb280b2e2d2f55afb477891804f6c08034321&v=4" width=115><br><sub>Renato Santini</sub>](https://github.com/renasantini) | 
+| :---: | :---: | :---: | :---: | :---: | :---: |

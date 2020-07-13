@@ -8,7 +8,7 @@ feature 'User can approve purchase cancellation request' do
 
     visit root_path
 
-    click_on 'Solicitações de cancelamento'
+    click_on 'Cancelamentos'
     within "tr#purchase_cancellation-#{cancellation_request.id}" do
       click_on 'Detalhes'
     end

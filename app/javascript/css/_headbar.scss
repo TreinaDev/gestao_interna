@@ -1,0 +1,48 @@
+@mixin nav_link {
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 1.1em;
+  color: $color-3a;
+
+  &:hover {
+    color: $color-3b;
+    text-decoration: none;
+  }
+}
+
+.main_headbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  padding: 15px;
+  margin-bottom: 30px;
+  background-color: $pallette-royal-blue;
+}
+
+.headbar_right {
+  display: flex;
+  align-items: center;
+}
+
+.nav_item {
+  @include nav_link;
+
+  margin-right: 10px;
+  margin-left: 15px;
+  border-left: 2px solid $pallette-light-royal-blue;
+
+  &:first-child {
+    margin-right: 0;
+    border-left: none;
+  }
+}
+
+.nav_dropdown_item {
+  @include nav_link;
+
+  color: $pallette-independence;
+  &:hover {
+    color: $pallette-light-independence;
+  }
+}
