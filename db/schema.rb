@@ -12,6 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2020_07_12_215641) do
 
+  create_table "block_bots", force: :cascade do |t|
+    t.integer "bot_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bot_id"], name: "index_block_bots_on_bot_id"
+    t.index ["user_id"], name: "index_block_bots_on_user_id"
+  end
+
   create_table "bot_chats", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "end_time"
@@ -111,6 +120,8 @@ ActiveRecord::Schema.define(version: 2020_07_12_215641) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "block_bots", "bots"
+  add_foreign_key "block_bots", "users"
   add_foreign_key "bot_chats", "bots"
   add_foreign_key "bots", "companies"
   add_foreign_key "bots", "purchases"
