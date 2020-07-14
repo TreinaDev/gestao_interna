@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :purchase_cancellation do
     purchase
     status { :open }
-    user { nil }
+    user
 
     trait :with_a_reason do
       reason { Faker::Lorem.sentence }

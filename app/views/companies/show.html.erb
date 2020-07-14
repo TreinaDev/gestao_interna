@@ -1,9 +1,7 @@
-<h1><%= @company.name %></h1>
+<h1><%= @company.fantasy_name %></h1>
 <h2> <%= t('.details')%> </h2>
 
 <dl>
-  <dt><%= Company.human_attribute_name(:name) %><dt>
-  <dd><%= @company.name %><dd>
   <dt><%= t('.company_status')%> </dt>
   <% if @company.blocked? %>
     <dd> Bloqueada <dd>

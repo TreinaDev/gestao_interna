@@ -26,6 +26,8 @@ class BlockBotCreator
 
   def create_bot_block
     BlockBot.create!(bot: bot, user: user)
+    PurchaseCancellation.create!(purchase: bot.purchase,
+                                 status: :approved, user: user)
   end
 
   def verify_company_block

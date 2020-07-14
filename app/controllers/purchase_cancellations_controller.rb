@@ -1,6 +1,6 @@
 class PurchaseCancellationsController < ApplicationController
   def index
-    @purchase_cancellations = PurchaseCancellation.open
+    @purchase_cancellations = PurchaseCancellation.all
   end
 
   def show

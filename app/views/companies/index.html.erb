@@ -1,23 +1,25 @@
 <h1><%= t('.message')%></h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Nome</th>
-      <th>Token</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Status</th>
+      <th scope="col">Token</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
     <% @companies.each do |company| %>
       <tr id=<%="company-#{company.id}"%>>
-        <td><%= company.name %><td>
+        <td><%= company.fantasy_name %></td>
         <% if company.blocked? %>
-          <td> Bloqueada <td>
+          <td> Bloqueada </td>
         <% else%>
-          <td> Ativa <td>
+          <td> Ativa </td>
         <% end %>
-        <td><%= company.token %><td>
-        <td><%= link_to 'Detalhes', company_path(company)%><td>
+        <td><%= company.token %></td>
+        <td><%= link_to 'Detalhes', company_path(company)%></td>
       </tr>
     <% end %>
   </tbody>

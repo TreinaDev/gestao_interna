@@ -8,6 +8,7 @@ class Api::V1::CompaniesController < Api::V1::ApiController
   private
 
   def company_params
-    params.require(:company).permit(:name, :cnpj, :address, :corporate_name)
+    params.require(:company).permit(:fantasy_name, :cnpj, :address,
+                                    :corporate_name, :token)
   end
 end

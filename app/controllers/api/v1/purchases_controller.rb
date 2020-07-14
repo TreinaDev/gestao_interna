@@ -3,7 +3,8 @@ class Api::V1::PurchasesController < Api::V1::ApiController
 
   def create
     @purchase = Purchase.create!(company: @company, plan: @plan, price: @price)
-    render json: @purchase, include: %i[company plan], status: :ok
+    render json: @purchase, include: %i[company plan],
+                            methods: :bot_token, status: :ok
   end
 
   private

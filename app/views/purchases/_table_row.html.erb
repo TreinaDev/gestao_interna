@@ -1,6 +1,6 @@
 <tr id="purchase-<%= purchase.id %>">
   <td><%= purchase.token %></td>
-  <td><%= purchase.company.name %></td>
+  <td><%= purchase.company.fantasy_name %></td>
   <td><%= purchase.plan.name %></td>
   <td><%= Purchase.human_attribute_name("status.#{purchase.status}") %></td>
 

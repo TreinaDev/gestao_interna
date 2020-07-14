@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_12_215641) do
+ActiveRecord::Schema.define(version: 2020_07_14_174600) do
 
   create_table "block_bots", force: :cascade do |t|
     t.integer "bot_id", null: false
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_07_12_215641) do
 
   create_table "companies", force: :cascade do |t|
     t.string "token"
-    t.string "name"
+    t.string "fantasy_name"
     t.string "cnpj"
     t.boolean "blocked", default: false
     t.datetime "created_at", precision: 6, null: false

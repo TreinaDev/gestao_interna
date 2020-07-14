@@ -8,7 +8,7 @@
     <dd class="col-sm-9"><%= @purchase_cancellation.id %></dd>
 
     <dt class="col-sm-3"><%= t('activerecord.models.company.one') %> </dt>
-    <dd class="col-sm-9"><%= @purchase_cancellation.purchase.company.name %></dd>
+    <dd class="col-sm-9"><%= @purchase_cancellation.purchase.company.fantasy_name %></dd>
 
     <dt class="col-sm-3"><%= t('activerecord.attributes.company.token') %> </dt>
     <dd class="col-sm-9"><%= @purchase_cancellation.purchase.company.token %></dd>
@@ -25,9 +25,11 @@
   <br/>
 
   <nav>
-    <%= link_to t('.approve'), approve_purchase_cancellation_path(@purchase_cancellation), 
-                method: :post, class: 'btn btn-outline-success'%>
-    <%= link_to t('.reject'), reject_purchase_cancellation_path(@purchase_cancellation), 
-                method: :post, class: 'btn btn-outline-danger'%>
+    <% if @purchase_cancellation.open? %>
+      <%= link_to t('.approve'), approve_purchase_cancellation_path(@purchase_cancellation),
+        method: :post, class: 'btn btn-outline-success'%>
+      <%= link_to t('.reject'), reject_purchase_cancellation_path(@purchase_cancellation),
+        method: :post, class: 'btn btn-outline-danger'%>
+    <% end %>
   </nav>
 </section>
